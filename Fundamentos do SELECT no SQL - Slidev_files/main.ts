@@ -1,0 +1,8 @@
+import { createApp } from "/node_modules/vue/dist/vue.esm-bundler.js?v=3864ddf7";
+import App from "/node_modules/@slidev/client/App.vue?v=3864ddf7";
+import setupMain from "/node_modules/@slidev/client/setup/main.ts?v=3864ddf7";
+const app = createApp(App);
+setupMain(app);
+app.mount("#app");
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4udHM/dj0zODY0ZGRmNyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSB0eXBlcz1cIkBzbGlkZXYvdHlwZXMvY2xpZW50XCIgLz5cblxuaW1wb3J0IHsgY3JlYXRlQXBwIH0gZnJvbSAndnVlJ1xuaW1wb3J0IEFwcCBmcm9tICcuL0FwcC52dWUnXG5pbXBvcnQgc2V0dXBNYWluIGZyb20gJy4vc2V0dXAvbWFpbidcblxuY29uc3QgYXBwID0gY3JlYXRlQXBwKEFwcClcbnNldHVwTWFpbihhcHApXG5hcHAubW91bnQoJyNhcHAnKVxuIl0sIm1hcHBpbmdzIjoiQUFFQSxTQUFTLGlCQUFpQjtBQUMxQixPQUFPLFNBQVM7QUFDaEIsT0FBTyxlQUFlO0FBRXRCLE1BQU0sTUFBTSxVQUFVLEdBQUc7QUFDekIsVUFBVSxHQUFHO0FBQ2IsSUFBSSxNQUFNLE1BQU07IiwibmFtZXMiOltdLCJ4X2dvb2dsZV9pZ25vcmVMaXN0IjpbMF19
