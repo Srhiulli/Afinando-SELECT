@@ -87,7 +87,7 @@ level: 2
 layout: two-cols
 layoutClass: gap-16
 layout: image-left
-image: https://cover.sli.dev
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/6terqWC_KCk.webp
 ---
 
 ### Exemplo de uma query (consulta):
@@ -107,7 +107,7 @@ level: 2
 layout: two-cols
 layoutClass: gap-16
 layout: image-left
-image: https://cover.sli.dev
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/NtcKHag5GA4.webp
 ---
 
 ### Exemplo de uma query (consulta):
@@ -124,7 +124,7 @@ LIMIT 5
 ---
 transition: slide-left
 layout: image-left
-image: https://cover.sli.dev
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/REjuIrs2YaM.webp
 ---
 ### Filtros LIKE e ILIKE no SQL
 
@@ -134,6 +134,7 @@ SELECT *
 FROM user 
 WHERE name LIKE 'Jo%'
 ```
+
 ILIKE não diferencia maiúsculas e minúsculas
 
 ```sql
@@ -152,7 +153,7 @@ WHERE created_at >= '%2024-08-10%'
 ---
 transition: slide-right
 layout: image-left
-image: https://cover.sli.dev
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/UqV3Chmk8v4.webp
 ---
 
 ### Otimização de Consultas com AND, WHERE e LIMIT no SQL 🚀:
