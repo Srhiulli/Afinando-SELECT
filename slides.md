@@ -111,7 +111,7 @@ image: https://cover.sli.dev
 ---
 
 ### Exemplo de uma query (consulta):
-Buscando por colunas específicas
+Selecionando por colunas específicas na busca
 <br><br>
 
 ```sql {all|1|all} twoslash
@@ -121,7 +121,34 @@ WHERE owner_id_agency = "0af8dc24-4c25-435"
 ORDER BY created_at DESC 
 LIMIT 5
 ```
+---
+transition: slide-left
+layout: image-left
+image: https://cover.sli.dev
+---
+### Filtros LIKE e ILIKE no SQL
 
+LIKE sensível as letras maiúsculas
+```sql
+SELECT * 
+FROM user 
+WHERE name LIKE 'Jo%'
+```
+ILIKE não diferencia maiúsculas e minúsculas
+
+```sql
+SELECT * 
+FROM user 
+WHERE name ILIKE 'Jo%'
+```
+
+### Operador >= no SQL
+
+```sql
+SELECT * 
+FROM deal 
+WHERE created_at >= '%2024-08-10%'
+```
 ---
 transition: slide-right
 layout: image-left
@@ -226,7 +253,8 @@ JOIN tags t ON t.contact_id = c.id
 WHERE c.owner_id_agency = '478982xu2hi3wp382492'
 AND t.name = 'Abacate'
 ORDER BY t.name DESC
-LIMIT 20;
+LIMIT 20
 ```
   </div>
 </div>
+
