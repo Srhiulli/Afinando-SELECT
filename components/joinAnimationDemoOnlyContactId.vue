@@ -2,21 +2,21 @@
 import { ref, onMounted } from 'vue'
 
 const contactTable = ref([
-  { id: '478982xu2hi3wp382492', name: 'Alice' },
-  { id: '94827sxi3829wi123092', name: 'Bob' },
-  { id: '478982xu2hi3wp382492', name: 'Joao' },
-  { id: '94827sxi3829wi123092', name: 'Alex' },
-  { id: '478982xu2hi3wp382492', name: 'Leticia' },
-  { id: '94827sxi3829wi123092', name: 'Ana' }
+  { id: '478982xu2hi3wp382492'},
+  { id: '94827sxi3829wi123092'},
+  { id: '478982xu2hi3wp382492'},
+  { id: '94827sxi3829wi123092'},
+  { id: '478982xu2hi3wp382492'},
+  { id: '94827sxi3829wi123092'}
 ])
 
 const tagsTable = ref([
-  { contact_id: '478982xu2hi3wp382492', tag: 'Abacate' },
-  { contact_id: '94827sxi3829wi123092', tag: 'Laranja' },
-    { contact_id: '478982xu2hi3wp382492', tag: 'Bergamota' },
-  { contact_id: '94827sxi3829wi123092', tag: 'Abacate' },
-    { contact_id: '478982xu2hi3wp382492', tag: 'Abacate' },
-  { contact_id: '94827sxi3829wi123092', tag: 'Abacate' }
+  { contact_id: '478982xu2hi3wp382492'},
+  { contact_id: '94827sxi3829wi123092'},
+    { contact_id: '478982xu2hi3wp382492'},
+  { contact_id: '94827sxi3829wi123092'},
+    { contact_id: '478982xu2hi3wp382492'},
+  { contact_id: '94827sxi3829wi123092'}
 ])
 
 const showJoinArrow = ref(false)
@@ -29,15 +29,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-start items-center bg-gray-100 p-4">
+<div class="flex justify-start items-center p-0 gap-10">
     <!-- Tabela Contact -->
-    <div class="w-1/3 p-4">
+    <div class="w-1/3 p-0">
       <h2 class="text-lg font-bold mb-2 text-center">contact</h2>
       <table class="table-auto w-full bg-white rounded-lg shadow-lg border border-gray-200">
         <thead>
           <tr class="bg-blue-200">
             <th class="px-4 py-2">id</th>
-            <th class="px-4 py-2">name</th>
           </tr>
         </thead>
         <tbody>
@@ -49,19 +48,14 @@ onMounted(() => {
       </table>
     </div>
 
-    <!-- Seta de Join -->
-    <div class="w-1/6 flex justify-center items-center relative">
-      <div v-if="showJoinArrow" class="join-arrow"></div>
-    </div>
 
     <!-- Tabela Tags -->
-    <div class="w-1/3 p-4">
+    <div class="w-1/3 p-0 ml-4">
       <h2 class="text-lg font-bold mb-2 text-center">tags</h2>
       <table class="table-auto w-full bg-white rounded-lg shadow-lg border border-gray-200">
         <thead>
           <tr class="bg-green-200">
             <th class="px-4 py-2">contact_id</th>
-            <th class="px-4 py-2">name</th>
           </tr>
         </thead>
         <tbody>

@@ -167,7 +167,7 @@ LIMIT 5
 💡 Dica: Menos é mais! Limite o número de registros para consultas mais rápidas.
 
 ---
-transition: slide-up
+transition: slide-left
 ---
 # Usando alias para dar um <span v-mark.underline.pink>apelido</span> para as tabelas 
 <br>
@@ -193,19 +193,40 @@ transition: slide-left
 
 O JOIN no SQL é como juntar duas tabelas e combinar seus dados com base em uma relação comum.
 
-```sql
-SELECT c.name, t.name
-FROM c.contact c
-JOIN t.tags t ON t.contact_id = c.id
-WHERE c.id = "478982xu2hi3wp382492"
-ORDER BY t.name DESC
-LIMIT 4;
-```
 
 Resumindo: O JOIN conecta os dados de duas tabelas com base em uma chave comum, permitindo que você traga informações relacionadas em uma única consulta! 🎉
+<br><br>
+
+
+<div v-click> <h1> Como selecionar os nomes dos contatos de uma conta que possuem a tag "Abacate"? </h1> </div>
+<div v-click> <h1> Qual coluna temos em comum na tabela tags e contact? </h1> </div>
+
 
 ---
-transition: slide-up
+transition: slide-left
 ---
 
 <joinAnimationDemo />
+
+---
+transition: slide-left
+layout: two-cols
+---
+
+<div class="grid grid-cols-2 gap-2 flex items-center">
+  <div>
+<joinAnimationDemoOnlyContactId />
+  </div>
+  <div>
+
+```sql {all|2|3|4-5|1|6-7|all} twoslash
+SELECT c.name, t.name
+FROM contact c
+JOIN tags t ON t.contact_id = c.id
+WHERE c.owner_id_agency = '478982xu2hi3wp382492'
+AND t.name = 'Abacate'
+ORDER BY t.name DESC
+LIMIT 20;
+```
+  </div>
+</div>
