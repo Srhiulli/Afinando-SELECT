@@ -142,14 +142,34 @@ SELECT *
 FROM user 
 WHERE name ILIKE 'Jo%'
 ```
+---
+transition: slide-left
+layout: image-left
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/REjuIrs2YaM.webp
+---
 
-### Operador >= no SQL
-
+### Operador > <> < no SQL
+Maior que 
 ```sql
 SELECT * 
 FROM deal 
-WHERE created_at >= '%2024-08-10%'
+WHERE created_at > '%2024-08-10%'
 ```
+
+Diferente de 
+```sql
+SELECT * 
+FROM user 
+WHERE email <> '%clint.digital%'
+```
+
+Menor que 
+```sql
+SELECT * 
+FROM user 
+WHERE updated_at < '%2024-08-10%'
+```
+
 ---
 transition: slide-right
 layout: image-left
