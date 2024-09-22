@@ -145,7 +145,7 @@ WHERE name ILIKE 'Jo%'
 ---
 transition: slide-left
 layout: image-left
-image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/REjuIrs2YaM.webp
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/4uH95YbrT0c.webp
 ---
 
 ### Operador > <> < no SQL
@@ -196,7 +196,7 @@ LIMIT 5
 ---
 transition: slide-left
 layout: image-left
-image: https://cover.sli.dev
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/mI-QcAP95Ok.webp
 ---
 ### Otimização de Consultas com AND, WHERE e LIMIT no SQL 🚀:
 <br>
