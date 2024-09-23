@@ -317,11 +317,10 @@ HAVING COUNT(channel_id) > 10;
 
 **Problema** 
 ##### Problema é que owner_id_agency não existe na tabela channel_id, e preciso buscar na tabela channel_account
-ERROR: relation "channel_id" does not exist Posição: 64
 ---
 transition: slide-left
 layout: image-right
-image: './background.jpg'
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/REjuIrs2YaM.webp
 ---
 **Solução**
 ##### Detalhe os campos e tabelas:
@@ -339,7 +338,7 @@ HAVING COUNT(*) > 10;
 ---
 transition: slide-up
 layout: image-left
-image: './background.jpg'
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/NgzaXnY9hF0.webp
 ---
 # Dicas de Prompts para a IA
 <br>
@@ -352,3 +351,54 @@ image: './background.jpg'
 
 ##### **"Quero criar uma query com JOIN entre as tabelas `deal` e `contact`, pode me ajudar?"**
 
+---
+transition: slide-up
+layout: image
+image: '/image copy 4.png'
+---
+```sql
+SELECT  name, email, phone, deleted_at
+FROM contact
+WHERE owner_id_agency = '92a0c5f8-3d6e-4f6c-9111-82b0647d6e38'
+AND deleted_at IS NOT NULL
+
+```
+```sql
+SELECT d.*
+FROM deal d
+JOIN contact c ON d.contact_id = c.id
+JOIN "user" u ON d.user_id = u.id
+WHERE d.owner_id_agency = 'b11275e4-e290-4cac-a21b-8c1d765f502b'
+AND d.origin_id = '3f9d4075-7eb5-464b-822d-f75308101c64'
+AND d.created_at >= '2024-01-01'
+```
+```sql
+SELECT c."name", c.phone, c.email, u.first_name, d.status, d.stage 
+FROM contact c 
+JOIN deal d on d.contact_id = c.id 
+JOIN "user" u on d.user_id = u.id
+WHERE d.owner_id_agency = 'b11275e4-e290-4cac-a21b-8c1d765f502b'
+AND d.origin_id = '3f9d4075-7eb5-464b-822d-f75308101c64'
+```
+```sql
+SELECT * FROM "public"."webhook" 
+WHERE ("event" ILIKE '%webhook%') 
+AND ("data"::TEXT ILIKE '%jhonathan@teste.com.br%') 
+AND ("owner_id" = '22512a26-c5e2-44b1-b4a2-891e7503e128')
+--and ("app_integration_id" = 'e970b7f2-c169-4224-a8e1-d30b1d01cdcf')
+ORDER BY "created_at";
+```
+---
+transition: slide-down
+layout: image
+image: '/image copy 4.png'
+---
+```sql
+SELECT name c, email c, phone c, d.deleted_at 
+FROM contact c 
+JOIN deal d ON c.id = d.contact_id 
+WHERE ("origin_id" = '2453ab29-c043-4402-9dd8-585299de12e6')
+AND (d.deleted_at IS NOT NULL)
+AND (d.owner_id_agency = '0c7e405e-ba8c-4897-b1a6-33079a60179c')
+AND (d.deleted_at >= '2024-03-27');
+```
