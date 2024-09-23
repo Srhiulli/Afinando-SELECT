@@ -294,3 +294,61 @@ LIMIT 20
   </div>
 </div>
 
+
+
+---
+transition: slide-left
+layout: image-right
+image: './background.jpg'
+---
+# IA para Formulação de Queries SELECT
+<br>
+
+**Prompt**
+##### Quero selecionar todos as contas com mais de 10 dispositivos em um SQL.
+
+**Resposta:**
+```sql
+SELECT owner_id_agency, COUNT(channel_id) AS device_count
+FROM channel_id
+GROUP BY owner_id_agency
+HAVING COUNT(channel_id) > 10;
+```
+
+**Problema** 
+##### Problema é que owner_id_agency não existe na tabela channel_id, e preciso buscar na tabela channel_account
+ERROR: relation "channel_id" does not exist Posição: 64
+---
+transition: slide-left
+layout: image-right
+image: './background.jpg'
+---
+**Solução**
+##### Detalhe os campos e tabelas:
+
+**Prompt**
+#####  Quero listar `owner_id`e `channel_id` dos dispositivos na tabela `channel_account` com mais de 10 dispositivos.
+
+**Resultado**
+```sql
+SELECT owner_id, channel_id
+FROM channel_account
+GROUP BY owner_id, channel_id
+HAVING COUNT(*) > 10;
+```
+---
+transition: slide-up
+layout: image-left
+image: './background.jpg'
+---
+# Dicas de Prompts para a IA
+<br>
+
+##### **"Me ajude a escrever um SELECT que busca todos os clientes que criaram uma conta há menos de 10 dias."** 
+<br>
+
+##### **"Como posso otimizar essa query que seleciona dados da tabela de tags?"**
+ <br>
+
+##### **"Quero criar uma query com JOIN entre as tabelas `deal` e `contact`, pode me ajudar?"**
+
