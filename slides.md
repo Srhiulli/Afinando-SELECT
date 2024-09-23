@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: './background.jpg'
+background: './imagebg.webp'
 title: Fundamentos do SELECT no SQL 
 info: |
   ## Slidev Starter Template
@@ -171,36 +171,50 @@ WHERE updated_at < '%2024-08-10%'
 ```
 
 ---
-transition: slide-right
+transition: slide-up
 layout: image-left
-image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/UqV3Chmk8v4.webp
+image: './imageindice.webp'
 ---
 
-### Otimização de Consultas com AND, WHERE e LIMIT no SQL 🚀:
-<br>
+### O que é uma coluna indexada?
+Uma coluna indexada em um banco de dados é como um índice de um livro. <br><br>
+Ela facilita a busca rápida de informações.<br><br>Quando uma coluna é indexada, o banco de dados pode encontrar dados mais rapidamente, sem precisar ler todas as informações.
 
-O Filtro Mágico do WHERE e AND 🧙‍♂️
+### Como saber se uma coluna é indexada?
+```sql
+SELECT tablename, indexname, indexdef
+FROM pg_indexes
+WHERE tablename = 'nome_da_tabela'
+```
+---
+transition: slide-up
+layout: image-left
+image: './image.png'
+---
+
+### Otimização de Consultas com AND, WHERE no SQL 🚀
 
 ```sql {all|3|4|all} twoslash
 SELECT *
 FROM contact
 WHERE owner_id_agency = "0af8dc24-4c25-435"
-AND name = "Cleitinho"
+AND name = "Cleitinho" 
 ORDER BY created_at DESC 
 LIMIT 5
 ```
-<br><br>
 
-💡 Dica: Use WHERE e AND para buscar apenas o necessário, e economize tempo e processamento!
+💡 Dica: Use WHERE e AND para buscar apenas o necessário e economize tempo e processamento!
+<br><br>
+Caso pesquise um WHERE ou AND em uma coluna que não é indexada, a busca não será otimizada, fazendo o SELECT ler todas as linhas do banco
 
 ---
 transition: slide-left
 layout: image-left
 image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/mI-QcAP95Ok.webp
 ---
-### Otimização de Consultas com AND, WHERE e LIMIT no SQL 🚀:
+### LIMIT no SQL 🚀:
 <br>
-O Cortador de Fila LIMIT ✂️
+O limitador de linhas LIMIT ✂️
 
 ```sql {all|6|all} twoslash
 SELECT *
@@ -212,7 +226,7 @@ LIMIT 5
 ```
 <br><br>
 
-💡 Dica: Menos é mais! Limite o número de registros para consultas mais rápidas.
+💡 Dica: Menos é mais! Limite o número de registros para um retorno mais limpo. 
 
 ---
 transition: slide-left
@@ -235,6 +249,8 @@ LIMIT 5
 Um alias torna sua consulta mais limpa, curta e fácil de entender! E irá facilitar no JOIN -->
 ---
 transition: slide-left
+layout: image-left
+image: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/4uH95YbrT0c.webp
 ---
 
 ### JOIN no SQL 🚀
@@ -245,9 +261,8 @@ O JOIN no SQL é como juntar duas tabelas e combinar seus dados com base em uma 
 Resumindo: O JOIN conecta os dados de duas tabelas com base em uma chave comum, permitindo que você traga informações relacionadas em uma única consulta! 🎉
 <br><br>
 
-
-<div v-click> <h1> Como selecionar os nomes dos contatos de uma conta que possuem a tag "Abacate"? </h1> </div>
-<div v-click> <h1> Qual coluna temos em comum na tabela tags e contact? </h1> </div>
+<div v-click> <h4> Como selecionar os nomes dos contatos de uma conta que possuem a tag "Abacate"? </h4> </div>
+<div v-click> <h4> Qual coluna temos em comum na tabela tags e contact? </h4> </div>
 
 
 ---
@@ -273,7 +288,7 @@ FROM contact c
 JOIN tags t ON t.contact_id = c.id
 WHERE c.owner_id_agency = '478982xu2hi3wp382492'
 AND t.name = 'Abacate'
-ORDER BY t.name DESC
+ORDER BY t.created_at DESC
 LIMIT 20
 ```
   </div>
